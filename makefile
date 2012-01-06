@@ -9,9 +9,9 @@ H5_ROOT=/home/tfogal/dev/visit/deps/visit/hdf5/1.8.4/a
 H5_LD=-L$(H5_ROOT)/lib -lhdf5
 CXXFLAGS=-D_GLIBCXX_DEBUG -g -Wextra -Wall $(SILO_CF) $(UVF_CF)
 
-OBJ=to-bov.o raw.o uvf.o
+OBJ=raw.o uvf.o
 
-all: $(OBJ) bovconv ascii-to-uvf
+all: $(OBJ) ascii-to-uvf
 
 bovconv: to-bov.o
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(SILO_LD) $(H5_LD)
